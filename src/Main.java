@@ -27,22 +27,29 @@ public class Main {
             n = numeroDoUsuario.nextInt();
             if (n == numeroAleatorio) {
                 System.out.println("Parabéns vc acertou");
+                tentativas = 4 ;
             }
             if (tentativas == 3) {
                 System.out.println("Suas chances acabaram");
-            } else {
+            }
+            else {
                 if (n > numeroAleatorio) {
                     System.out.println(maiorQ);
                 }
                 if (n < numeroAleatorio) {
                     System.out.println(menorQ);
                 }
-
-                tentativas++;
-                System.out.println("tentativas: "+tentativas);
+                if (tentativas <= 3 ){
+                    tentativas++;
+                    System.out.println("tentativa: " + tentativas);
+                    System.out.println("faltam: " + (3 - tentativas));
+                }
             }
-
+            if (tentativas >=3 ) {
+                System.out.println("Fim de jogo");
+            }
 
         }
     }
 }
+
